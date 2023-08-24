@@ -4,7 +4,7 @@ public abstract class Moeda {
 
     double valor;
 
-    // cria o contrutor
+    // cria o construtor
     public Moeda(double valor) {
         super();
         this.valor = valor;
