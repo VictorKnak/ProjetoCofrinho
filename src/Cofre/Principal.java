@@ -30,6 +30,11 @@ public class Principal {
             // Carrega a opção digitada no teclado
             opcao = teclado.nextInt();
 
+            if (opcao > 5) {
+                System.out.println(opcaoErrada);
+                continue;
+            }
+
             // Case para verificar as opções escolhidas e adicionar na String para exibir a
             // mensagem na tela
             switch (opcao) {
@@ -81,7 +86,14 @@ public class Principal {
                         System.out.println("1 - Dolar");
                         System.out.println("2 - Euro");
                         System.out.println("3 - Real");
+                        System.out.println("4 - Voltar");
                         tipoMoeda = teclado.nextInt();
+
+                        // Verifica se a opcao escolhida foi para voltar ao menu anterior e da um break
+                        // para sair do loop
+                        if (tipoMoeda == 4) {
+                            break;
+                        }
 
                         // verifica se o tipo da moeda está entre a opções disponiveis
                         if (tipoMoeda <= 0 || tipoMoeda > 3) {
@@ -139,9 +151,6 @@ public class Principal {
                                 case 3: // Real
 
                                     break;
-
-                                default:
-                                    break;
                             }
                         }
 
@@ -159,6 +168,7 @@ public class Principal {
                 case 5: // Encerrar
                     System.out.println("Programa encerrado com sucesso!");
                     break;
+
             }
 
         }
