@@ -7,10 +7,15 @@ public class Real extends Moeda {
     }
 
     @Override
-    double info() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'info'");
+    void info() {
+
+        System.out.println("Real - Valor depositado: R$ " + valor);
     }
+
+    // @Override
+    // public String toString() {
+    //     return "\nReal - Valor depositado: R$" + valor;
+    // }
 
     @Override
     double converter() {

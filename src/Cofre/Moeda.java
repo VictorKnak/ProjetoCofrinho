@@ -11,7 +11,7 @@ public abstract class Moeda {
     }
 
     // métodos abstrados para as classes filhas
-    abstract double info();
+    abstract void info();
 
     abstract double converter();
 

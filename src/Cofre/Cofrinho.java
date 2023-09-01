@@ -4,23 +4,23 @@ import java.util.ArrayList;
 
 public class Cofrinho {
 
-    ArrayList<Moeda> Moeda = new ArrayList<Moeda>();
+    ArrayList<Moeda> ListaMoeda = new ArrayList<Moeda>();
 
     // Adicionar a moeda
-    public void adicionar(Moeda m) {
-        Moeda.add(m);
+    public void adicionar(Moeda valor) {
+        ListaMoeda.add(valor);
     }
 
     // Remover as moedas
     public void remover(Moeda m) {
-        Moeda.remove(m);
+        ListaMoeda.remove(m);
     }
 
     // Lista as moedas
     public void listar() {
 
-        for (Moeda M : Moeda) {
-            System.out.println(M);
+        for (Moeda M : ListaMoeda) {
+            M.info();
         }
 
     }

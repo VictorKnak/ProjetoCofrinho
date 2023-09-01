@@ -1,22 +1,25 @@
 package Cofre;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) throws Exception {
 
-        // Estancia a classe para pegar dado do teclado
-        Scanner teclado = new Scanner(System.in);
-
         // Declaração e inicialização das variáveis
         int opcao;
         String nomeDaOpcao = "";
         String opcaoErrada = "\n** Opção incorreta tente novamente! **";
+        Moeda depositar;
+        double valor = 0;
 
         // Estancia a classe cofrinho
         Cofrinho cofrinho = new Cofrinho();
 
         while (true) {
+
+            // Estancia a classe para pegar dado do teclado
+            Scanner teclado = new Scanner(System.in);
 
             System.out.println("\n|------------------|");
             System.out.println("|------ Menu ------|");
@@ -135,23 +138,52 @@ public class Principal {
 
                         } else { // Se estiver nas opções disponiveis adiciona na moeda correspondente
 
-                            System.out.println("\n** Digite o valor que deseja depositar **");
+                            System.out.println("\n$$ Digite o valor que deseja depositar $$");
 
-                            // carrega o valor desejado digitado no teclado
-                            double valor = teclado.nextDouble();
+                            // Faz tratamento caso seja digitado algum caractere
+                            try {
+
+                                // carrega o valor desejado digitado no teclado
+                                valor = teclado.nextDouble();
+
+                                // Se for menor que zero da erro
+                                if (valor <= 0) {
+                                    throw new RuntimeException("\n!!!! Valor Inválido! Tente novamente !!!!");
+                                }
+
+                            } catch (InputMismatchException e) {
+
+                                System.out.println("\n!!!! Formato de número errado! Tente Novamente !!!!");
+                                break;
+
+                            }
+
+                            catch (Exception e) {
+
+                                System.out.println(e.getMessage());
+                                break;
+
+                            }
+
+                            depositar = null;
 
                             // switchCase para verificar o tipo da moeda escolhida
                             switch (tipoMoeda) {
                                 case 1: // Dolar
+                                    depositar = new Dolar(valor);
 
-                                    break;
                                 case 2: // Euro
+                                    depositar = new Euro(valor);
 
-                                    break;
                                 case 3: // Real
+                                    depositar = new Real(valor);
 
-                                    break;
                             }
+
+                            cofrinho.adicionar(depositar);
+                            System.out.println("Valor de R$" + valor + " depositado com sucesso!");
+                            break;
+
                         }
 
                     }
@@ -160,6 +192,8 @@ public class Principal {
                     break;
 
                 case 3: // Listar
+
+                    cofrinho.listar();
                     break;
 
                 case 4: // Calcular total convertido
