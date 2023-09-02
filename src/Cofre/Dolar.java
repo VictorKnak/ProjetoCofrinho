@@ -14,15 +14,10 @@ public class Dolar extends Moeda {
     @Override
     void info() {
 
-        System.out.println("Dolar - Valor depositado: R$ " + valor);
-        System.out.println("Cotação da moeda: RS " + cotacao);
+        System.out.println("\nDolar - Valor depositado: $ " + valor);
+        System.out.println("        Cotação da moeda: R$ " + cotacao);
 
     }
-
-    // @Override
-    // public String toString() {
-    //     return "\nDolar - Valor depositado: R$" + valor + "\n        Cotação da moeda: R$" + cotacao;
-    // }
 
     // método que converte o dolar para o real
     @Override

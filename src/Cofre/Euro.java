@@ -12,15 +12,9 @@ public class Euro extends Moeda {
     @Override
     void info() {
 
-        System.out.println("Euro - Valor depositado: R$ " + valor);
-        System.out.println("Cotação da moeda: RS " + cotacao);
+        System.out.println("\nEuro - Valor depositado: \u20AC " + valor);
+        System.out.println("       Cotação da moeda: R$ " + cotacao);
     }
-
-    // @Override
-    // public String toString() {
-    // return "\nDolar - Valor depositado: R$" + valor + "\n Cotação da moeda: R$" +
-    // cotacao;
-    // }
 
     // Converter o Euro para real
     @Override
@@ -28,7 +22,6 @@ public class Euro extends Moeda {
 
         return valor *= cotacao;
 
-        // throw new UnsupportedOperationException("Unimplemented method 'converter'");
     }
 
 }
