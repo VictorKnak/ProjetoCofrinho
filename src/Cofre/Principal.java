@@ -282,33 +282,25 @@ public class Principal {
 
                         }
 
-                        Moeda remove = null;
-
                         // Se for escolhido Dolar
                         if (tipoMoeda == 1) {
-                            // cofrinho.remover(new Dolar(valor));
+                            cofrinho.remover(new Dolar(valor));
 
-                            remove = new Dolar(valor);
                             identificacaoMoeda = "$";
 
                             // Se for escolhido Euro
                         } else if (tipoMoeda == 2) {
-                            // cofrinho.remover(new Euro(valor));
-                            remove = new Euro(valor);
+                            cofrinho.remover(new Euro(valor));
                             identificacaoMoeda = "\u20AC";
 
                             // Se for escolhido Real
                         } else if (tipoMoeda == 3) {
-                            // cofrinho.remover(new Real(valor));
-                            remove = new Real(valor);
+                            cofrinho.remover(new Real(valor));
                             identificacaoMoeda = "R$";
                         }
 
-                        cofrinho.remover(remove);
-
                         // Imprime na tela o valor depositado
                         System.out.println("\nValor de " + identificacaoMoeda + valor + " removido com sucesso!");
-                        System.out.println(cofrinho.tamanho());
                         break;
 
                     }

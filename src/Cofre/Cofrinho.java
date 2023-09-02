@@ -28,10 +28,6 @@ public class Cofrinho {
 
     }
 
-    public double tamanho() {
-        return listaMoeda.size();
-    }
-
     // total Convertido
     public double totalConvertido() {
 
