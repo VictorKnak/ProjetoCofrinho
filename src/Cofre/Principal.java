@@ -1,3 +1,13 @@
+/*******************************
+ **********  UNINTER ***********
+ *******************************
+ *                             *
+ * Polo Santa Cruz do Sul - RS *
+ * Nome: Victor Brizola Knak   *
+ * RU: 2012106                 *
+ *                             *
+ *******************************/
+
 package Cofre;
 
 import java.util.InputMismatchException;

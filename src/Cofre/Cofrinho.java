@@ -7,7 +7,6 @@ public class Cofrinho {
     double totalValor;
 
     ArrayList<Moeda> listaMoeda = new ArrayList<Moeda>();
-    public Object length;
 
     // Adicionar a moeda
     public void adicionar(Moeda valor) {
